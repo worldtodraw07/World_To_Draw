@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World_To_Draw | Charcoal Art Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'accent': '#8c8ca0',
+                        'accent-strong': '#b8b8cc',
+                        'bg-deep': '#111115',
+                        'bg-soft': '#18181d'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 2.5s linear infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(15px)' }
+                        },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 5px 25px rgba(255,255,255,0.15)' },
+                            '50%': { boxShadow: '0 5px 35px rgba(184,184,204,0.25)' }
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-accent-strong to-white;
+            }
+            .hover-lift {
+                @apply transition-transform duration-500 hover:scale-105 hover:-translate-y-1;
+            }
+            .shimmer-bg {
+                @apply bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%] animate-shimmer;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/image-effects.css">
+    <link rel="stylesheet" href="assets/css/gallery-sections.css">
+    <link rel="stylesheet" href="assets/css/tailwind-extensions.css">
+    <link rel="stylesheet" href="assets/css/modern-animations.css">
+    <script src="assets/js/scroll-animations.js" defer></script>
+</head>
+<body id="top">
+    <!-- Background logo (fixed, decorative, parallax) -->
+    <div class="site-logo-bg" aria-hidden="true">
+        <img src="assets/images/Worldtodraw.logo.jpg" alt="World To Draw logo background">
+    </div>
+    <div class="custom-cursor" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <aside class="floating-icon" aria-hidden="true">
+        <img src="assets/icons/charcoal-pencil.svg" alt="Charcoal pencil icon">
+    </aside>
+    <header class="site-header">
+        <a class="brand" href="#hero">
+            <span class="brand-logo" aria-hidden="true">
+                <img src="assets/images/Worldtodraw.logo.jpg" alt="World to Draw Logo">
+            </span>
+            <span class="brand-title">Word_To_Draw</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Art Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="section-nav" aria-label="Section navigation">
+        <ul>
+            <li><a href="#hero" aria-label="Hero">01</a></li>
+            <li><a href="#about" aria-label="About">02</a></li>
+                <li><a href="#gallery" aria-label="Gallery">03</a></li>
+                <li><a href="#contact" aria-label="Contact">04</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="hero reveal" id="hero">
+            <div class="hero-content"><b>  </b></h1>
+            <p data-float="0.3">Welcome to World_To_Draw — a curated collection of charcoal, texture, and wall art exploring light, form, and the emotion within monochrome expression.</p>
+                <div class="hero-actions">
+                    <a class="btn primary" data-magnetic="true" href="#gallery">Explore the Gallery</a>
+                    <a class="btn secondary" data-magnetic="true" href="#contact">Commission a Piece</a>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="charcoal-stroke" data-parallax="0.25"></div>
+                <div class="charcoal-stroke" data-parallax="0.35"></div>
+                <div class="charcoal-stroke" data-parallax="0.45"></div>
+            </div>
+        </section>
+
+        <section class="section-block reveal" id="about" aria-labelledby="about-title">
+            <div class="section-heading" data-float="0.3">
+                <h2 id="about-title" data-float="0.2">About World_To_Draw</h2>
+                <p data-float="0.25">Welcome to World_To_Draw, a curated portfolio highlighting expertise in charcoal art. Explore a collection of meticulously crafted artworks that showcase skill, technique, and creativity.</p>
+            </div>
+            <div class="about-layout">
+                <article class="about-card" data-tilt data-float="0.15">
+                    <h3 data-float="0.12">Charcoal Philosophy</h3>
+                    <p data-float="0.1">Charcoal is treated as both medium and muse, allowing light and shadow to converse across carefully structured compositions. Each piece is the result of focused observation, layered mark-making, and a commitment to monochromatic storytelling.</p>
+                </article>
+                <article class="about-card" data-tilt data-float="0.15">
+    <h3 data-float="0.12">Wall Art Philosophy</h3>
+    <p data-float="0.1">Wall art extends emotion into space, transforming surfaces into silent storytellers. Each stroke interacts with architecture and atmosphere, creating continuity between the artwork and its surroundings.</p>
+</article>
+
+<article class="about-card" data-tilt data-float="0.15">
+    <h3 data-float="0.1">Texture Art Philosophy</h3>
+    <p data-float="0.12">Texture art celebrates the tactile language of form. Through layered materials and contrast, it invites viewers to experience depth not only through sight but through imagined touch, blending structure with sensation.</p>
+</article>
+            </div>  
+<br>
+        <section class="gallery-preview reveal" aria-labelledby="preview-title">
+            <div class="section-heading" data-float="0.25">
+                <h2 id="preview-title" data-float="0.2"> Gallery Sampler </h2>
+                <p data-float="0.22">Preview highlights from the series. Visit the complete gallery for enlargeable works and curated collections.</p>
+            </div>
+            <div class="gallery-grid" role="list">
+                <figure class="gallery-item" role="listitem" data-tilt data-full="assets/images/IMG_20250729_100424070~2.jpg">
+                    <img src="assets/images/IMG_20250729_100424070~2.jpg" alt="Charcoal artwork" class="gallery-image">
+                    <figcaption><b> Charcoal Art </b></figcaption>
+                </figure>
+                <figure class="gallery-item" role="listitem" data-tilt data-full="assets\images\Wall Art_1.jpg">
+                    <img src="assets\images\Wall Art_1.jpg" alt="Wall artwork" class="gallery-image">
+                    <figcaption><b>Wall Art</b></figcaption>
+                </figure>
+                <figure class="gallery-item" role="listitem" data-tilt data-full="assets\images\Texture_art_1.jpg">
+                    <img src="assets\images\Texture_art_1.jpg" alt="Texture artwork" class="gallery-image">
+                    <figcaption><b>Texture Art</b></figcaption>
+                </figure>
+            </div>
+            <div class="gallery-cta">
+                <a class="btn tertiary" href="#gallery">View the Full Art Gallery</a>
+            </div>
+        </section>
+
+        <section class="gallery reveal scroll-animate backdrop-blur-sm bg-gradient-to-b from-bg-deep/50 to-bg-soft/50 rounded-2xl shadow-2xl border border-white/5" id="gallery" aria-labelledby="gallery-title">
+            <div class="section-heading relative overflow-hidden p-8 scroll-animate" data-float="0.28">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
+                <h2 id="gallery-title" data-float="0.22" class="text-4xl md:text-5xl font-playfair bg-gradient-to-r from-white via-accent-strong to-white bg-clip-text text-transparent scale-in">
+                    Art Gallery
+                </h2>
+                <p data-float="0.24" class="text-gray-300/90 mt-4 max-w-2xl backdrop-blur-sm bg-black/5 rounded-lg p-4 scroll-animate">
+                    Explore our diverse collection of artworks across different styles and mediums.
+                </p>
+            </div>
+            
+            <!-- Charcoal Art Section -->
+            <div class="gallery-section scroll-animate stagger-children">
+                <h3 class="gallery-section-title modern-card">Charcoal Art</h3>
+                <div class="gallery-grid stagger-children" role="list" data-parallax-speed="0.1">
+                    <figure class="gallery-item group relative overflow-hidden rounded-xl backdrop-blur-sm bg-black/20 hover:bg-black/30 transition-all duration-500" 
+                           role="listitem" data-tilt data-full="assets/images/IMG_20250729_100424070~2.jpg">
+                        <img src="assets/images/IMG_20250729_100424070~2.jpg" alt="Charcoal artwork" 
+                             class="gallery-image w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <figcaption class="absolute bottom-0 left-0 right-0 p-4 backdrop-blur-md bg-black/40 transform translate-y-full transition-transform duration-500 group-hover:translate-y-0">
+                            <span class="text-white font-medium">Shiva</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets/images/IMG-20240501-WA0022.jpg">
+                        <img src="assets/images/IMG-20240501-WA0022.jpg" alt="Charcoal artwork" class="gallery-image">
+                        <figcaption>Deepika Padukone</figcaption>
+                    </figure>
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets/images/IMG-20240531-WA0001.jpg">
+                        <img src="assets/images/IMG-20240531-WA0001.jpg" alt="Charcoal artwork" class="gallery-image">
+                        <figcaption>Kirti Sanon</figcaption>
+                    </figure>
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets/images/Screenshot_20241109-182515_Instagram~2.png">
+                        <img src="assets/images/Screenshot_20241109-182515_Instagram~2.png" alt="Charcoal artwork" class="gallery-image">
+                        <figcaption><b>Wild Life</b><br>Elephant Tree</figcaption>
+                    </figure>
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets/images/Screenshot_20241109-221852_Instagram~2.png">
+                        <img src="assets/images/Screenshot_20241109-221852_Instagram~2.png" alt="Charcoal artwork" class="gallery-image">
+                        <figcaption>Butterfly </figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <!-- Wall Art Section -->
+            <div class="gallery-section">
+                <h3 class="gallery-section-title">Wall Art</h3>
+                <div class="gallery-grid" role="list">
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets\images\Wall Art_1.jpg">
+                        <img src="assets\images\Wall Art_1.jpg" alt="Wall art piece 1" class="gallery-image">
+                        <figcaption>Wall Art Piece 1</figcaption>
+                    </figure>
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets\images\Wall art_ 2.jpg">
+                        <img src="assets\images\Wall art_ 2.jpg" alt="Wall art piece 2" class="gallery-image">
+                        <figcaption>Wall Art Piece 2</figcaption>
+                    </figure>
+                </div>
+            </div>
+            
+            <!-- Texture Art Section -->
+            <div class="gallery-section">
+                <h3 class="gallery-section-title">Texture Art</h3>
+                <div class="gallery-grid" role="list">
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets/images/Texture_art_1.jpg">
+                        <img src="assets\images\Texture_art_1.jpg" alt="Texture art piece 1" class="gallery-image">
+                        <figcaption>Texture Art Piece 1</figcaption>
+                    </figure>
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets/images/Texture_art _ 2.jpg">
+                        <img src="assets/images/Texture_art_2.jpg" alt="Texture art piece 2" class="gallery-image">
+                        <figcaption>Texture Art Piece 2</figcaption>
+                    </figure>
+                    <figure class="gallery-item" role="listitem" data-tilt data-full="assets/images/Texture_art_3.jpg">
+                        <img src="assets/images/Texture_art_3.jpg" alt="Texture art piece 3" class="gallery-image">
+                        <figcaption>Texture Art Piece 3</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+<br>
+<br>
+<br>
+        <section class="section-block reveal" id="contact" aria-labelledby="contact-title">
+            <div class="section-heading" data-float="0.32">
+                <h2 id="contact-title" data-float="0.28">Connect &amp; Collaborate</h2>
+                <p data-float="0.3">For commissions, collaborations, or inquiries, please connect via the links below.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-details" data-float="0.2">
+                    <h3 data-float="0.18">Direct Contact</h3>
+                    <p data-float="0.16">Share your project goals, timelines, and inspiration.</p>
+                    <ul class="contact-links">
+                        <li><strong>Email: </strong> <a href="worldtodraw07@gmail.com">worldtodraw07@gmail.com</a></li>
+                        <li><strong>Instagram: </strong> <a href="https://www.instagram.com/world_to_draw" target="_blank" rel="noopener">@world_to_draw</a></li>
+                        <li><strong>LinkedIn: </strong> <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">linkedin.com/in/worldtodraw</a></li>
+                    </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <span aria-hidden="true" class="footer-icon">
+                <img src="assets/icons/charcoal-mark.svg" alt="Charcoal mark accent">
+            </span>
+            <div>
+                <strong>World_To_Draw</strong>
+                <p>Charcoal-focused art portfolio</p>
+            </div>
+        </div>
+        <div class="footer-social" aria-label="Social media">
+            <a href="https://www.instagram.com/world_to_draw" target="_blank" rel="noopener" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm6.25-4.75a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1-2.5 2.5 2.5 2.5 0 0 1 2.5-2.5zM3 9h3.95v12H3zm6.75 0H14v1.71h.05a4 4 0 0 1 3.6-1.98c3.85 0 4.56 2.53 4.56 5.82V21H18v-5.36c0-1.28 0-2.92-1.84-2.92s-2.12 1.43-2.12 2.82V21H9.75z"/></svg>
+            </a>
+        </div>
+        <p class="footer-note">&copy; <span id="year"></span> World_To_Draw. Crafted for charcoal art enthusiasts.</p>
+    </footer>
+
+    <div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content" role="document">
+            <button class="modal-close" type="button" aria-label="Close artwork view">&times;</button>
+
+            <button class="modal-prev" type="button" aria-label="Previous artwork">&#10094;</button>
+            <button class="modal-next" type="button" aria-label="Next artwork">&#10095;</button>
+
+            <div class="modal-media">
+                <img src="" alt="Expanded charcoal artwork" id="lightbox-image">
+                <div class="modal-vignette" aria-hidden="true"></div>
+            </div>
+            <p id="lightbox-caption" class="modal-caption"></p>
+
+            <div class="pip" id="lightbox-pip" aria-hidden="true">
+                <img src="" alt="Next artwork preview" id="lightbox-pip-image">
+            </div>
+        </div>
+        <div class="modal-backdrop" aria-hidden="true"></div>
+    </div>
+
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
+

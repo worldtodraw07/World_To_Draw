@@ -1,0 +1,80 @@
+/* Tailwind CSS Extensions and Custom Components */
+
+/* Enhanced backdrop blur with gradient */
+.glass-morphism {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+}
+
+/* Animated gradient backgrounds */
+.gradient-animate {
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Enhanced hover effects */
+.hover-glow {
+    @apply transition-all duration-500;
+}
+
+.hover-glow:hover {
+    @apply transform scale-105 -translate-y-1;
+    box-shadow: 0 0 25px theme('colors.accent-strong');
+}
+
+/* Smooth image reveal animation */
+.image-reveal {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    animation: revealImage 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes revealImage {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.accent') transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-accent/50 rounded-full hover:bg-accent-strong/70 transition-colors duration-300;
+}
+
+/* Card hover effects */
+.card-hover {
+    @apply transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card-hover:hover::before {
+    @apply absolute inset-0 rounded-xl;
+    content: '';
+    background: linear-gradient(
+        45deg,
+        theme('colors.accent-strong/10'),
+        theme('colors.accent/5'),
+        theme('colors.accent-strong/10')
+    );
+    transform: translateZ(-1px);
+}

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 420">
+  <defs>
+    <linearGradient id="shaft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f1f23"/>
+      <stop offset="50%" stop-color="#2e2e33"/>
+      <stop offset="100%" stop-color="#1a1a1d"/>
+    </linearGradient>
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5c5c63" stop-opacity="0.7"/>
+      <stop offset="80%" stop-color="#3a3a3f" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="38" y="60" width="44" height="280" rx="12" fill="url(#shaft)"/>
+  <rect x="44" y="70" width="32" height="260" rx="8" fill="url(#highlight)"/>
+  <polygon points="60,20 80,60 40,60" fill="#3b2f2f"/>
+  <polygon points="60,0 88,52 32,52" fill="#bba892"/>
+  <polygon points="60,0 72,40 48,40" fill="#d9c7b0"/>
+  <rect x="44" y="340" width="32" height="24" rx="6" fill="#111"/>
+  <rect x="48" y="344" width="24" height="16" rx="4" fill="#262629"/>
+</svg>
+

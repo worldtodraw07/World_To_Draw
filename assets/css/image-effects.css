@@ -1,0 +1,85 @@
+/* Image floating animations and effects */
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(var(--float-distance)) scale(1.02);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 5px 25px var(--glow-primary);
+    }
+    50% {
+        box-shadow: 0 5px 35px var(--glow-accent);
+    }
+}
+
+.gallery-item {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: floatAnimation var(--float-duration) ease-in-out infinite;
+    animation-delay: calc(var(--float-duration) * -0.5 * var(--delay, 0));
+}
+
+.gallery-item:nth-child(2n) {
+    --delay: 0.2;
+}
+
+.gallery-item:nth-child(3n) {
+    --delay: 0.4;
+}
+
+.gallery-item:nth-child(4n) {
+    --delay: 0.6;
+}
+
+.gallery-item:hover {
+    animation-play-state: paused;
+}
+
+.gallery-image {
+    transition: transform 0.6s var(--transition),
+                filter 0.6s var(--transition),
+                box-shadow 0.6s var(--transition);
+    will-change: transform, filter, box-shadow;
+    filter: brightness(0.95) contrast(0.95);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover .gallery-image {
+    transform: translateZ(20px) scale(1.04);
+    filter: brightness(1.1) contrast(1.05) saturate(1.05);
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.3),
+        0 0 25px var(--glow-primary);
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Section-specific highlighting */
+.gallery-section:hover .gallery-item:not(:hover) .gallery-image {
+    filter: brightness(0.7) saturate(0.8);
+    transform: scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    :root {
+        --float-distance: 8px;
+        --float-duration: 4s;
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item {
+        animation: none;
+    }
+    
+    .gallery-item:hover .gallery-image {
+        animation: none;
+        transform: translateZ(0) scale(1.02);
+    }
+}

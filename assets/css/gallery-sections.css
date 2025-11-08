@@ -1,0 +1,40 @@
+/* Gallery Sections Styles */
+.gallery-section {
+    margin-top: 3.5rem;
+}
+
+.gallery-section:first-of-type {
+    margin-top: 2rem;
+}
+
+.gallery-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin: 0 0 1.5rem;
+    color: var(--text-primary);
+    position: relative;
+    padding-left: 1rem;
+}
+
+.gallery-section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 70%;
+    background: linear-gradient(to bottom, var(--accent-strong), var(--accent));
+    border-radius: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-section {
+        margin-top: 2.5rem;
+    }
+    
+    .gallery-section-title {
+        font-size: 1.4rem;
+    }
+}

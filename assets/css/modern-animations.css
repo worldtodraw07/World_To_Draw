@@ -1,0 +1,172 @@
+/* Modern UI Animations and Transitions */
+
+/* Base animation classes */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+.scroll-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered children animations */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+.stagger-children > *.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gallery image modern effects */
+.gallery-item {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.17, 0.84, 0.44, 1);
+    will-change: transform, opacity, filter;
+}
+
+.gallery-item.gallery-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item:hover {
+    z-index: 10;
+}
+
+.gallery-item img {
+    transition: all 0.5s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+.gallery-item.gallery-visible:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.05);
+}
+
+/* Modern hover effect */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                rgba(255,255,255,0.1) 0%, 
+                rgba(255,255,255,0) 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+/* Image caption reveal */
+.gallery-item figcaption {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.17, 0.84, 0.44, 1);
+    background: linear-gradient(to top, 
+        rgba(0,0,0,0.8) 0%,
+        rgba(0,0,0,0.6) 50%,
+        rgba(0,0,0,0) 100%);
+}
+
+.gallery-item:hover figcaption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Section transition effects */
+.section-heading {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-heading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255,255,255,0.2) 50%, 
+        transparent 100%);
+    transform: translateX(-100%);
+    animation: shimmerLine 2s infinite;
+}
+
+@keyframes shimmerLine {
+    100% { transform: translateX(100%); }
+}
+
+/* Parallax effect */
+.parallax {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Modern card hover effect */
+.modern-card {
+    position: relative;
+    transition: transform 0.5s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+.modern-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, 
+        rgba(255,255,255,0.1), 
+        rgba(255,255,255,0.05), 
+        rgba(255,255,255,0.1));
+    border-radius: inherit;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.modern-card:hover {
+    transform: translateY(-5px);
+}
+
+.modern-card:hover::before {
+    opacity: 1;
+}
+
+/* Image enlargement animation */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.17, 0.84, 0.44, 1) forwards;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
+/* Enhanced focus states */
+:focus-visible {
+    outline: 2px solid rgba(255,255,255,0.5);
+    outline-offset: 2px;
+    transition: outline-offset 0.2s ease;
+}
